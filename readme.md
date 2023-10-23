@@ -298,3 +298,40 @@ git commit -m 'rotas do projeto'
 ```
 git push
 ```
+
+
+PASSO 4:
+
+Clonar o repositório na sua máquina
+```
+git clone URL_REPOSITORIO
+```
+
+Acessar pasta
+```
+cd NOME_REPOSITORIO
+```
+
+Reinstalar os pacotes da aplicação
+```
+npm i
+```
+
+Recriar arquivo .env
+
+Definir as variáveis no arquivo .env a partir das chaves definidas no arquivo .env.example
+
+
+INSOMNIA
+
+Passo get:
+<img src="./assets/get.png">
+
+Passo post:
+<img src="./assets/post.png">
+
+Passo put: 
+<img src="./assets/put.png">
+
+Passo delete:
+<img src="./assets/delete.png">

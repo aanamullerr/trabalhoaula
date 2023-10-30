@@ -335,3 +335,105 @@ Passo put:
 
 Passo delete:
 <img src="./assets/delete.png">
+
+
+PASSO 5:
+
+Clonar o repositório na sua máquina
+```
+git clone URL_REPOSITORIO
+```
+
+Acessar a pasta 
+```
+cd NOME_REPOSITORIO
+```
+
+Reinstalar os pacotes da aplicação
+```
+npm i
+```
+
+Recriar arquivo .env
+```
+PORT = 3000
+```
+
+Criar pasta 'controllers' dentro da pasta 'src'
+
+Criar arquivo 'crudController.js' na pasta 'controllers'
+
+Colar os códigos no arquivo crudController.js
+```
+function listarDados(request, response) {
+    response.send('Retorno de lista de informação do Banco de dados');
+}
+
+function gravarDados(request, response) {
+    response.send('Método utilizado para salvar informações!');
+}
+
+function atualizarDados(request, response) {
+    response.send('Método utilizado para editar informações!');
+}
+
+function deletarDados(request, response) {
+    response.send('Método utilizado para deletar informações!');
+}
+
+module.exports = {
+    listarDados,
+    gravarDados, 
+    atualizarDados, 
+    deletarDados
+}
+```
+
+Alterar o arquivo 'rotas.js'
+```
+// Importar pacote do express
+const { Router } = require('express');
+// Instanciar o Router na variavel router
+const router = Router();
+// Importar funções do controller para a rota acessar as funções
+const { 
+    listarDados,
+    gravarDados,
+    atualizarDados,
+    deletarDados
+ } = require('../controllers/crudController');
+
+router.get('/listar', listarDados);
+
+router.post('/gravar', gravarDados);
+
+router.put('/atualizar/:id', atualizarDados);
+
+router.delete('/deletar/:id', deletarDados);
+
+module.exports = router;
+```
+
+Rodar o comando 
+```
+npm start
+```
+
+Abrir o insomnia
+
+Testar as 4 requisições para os métodos GET, POST, PUT e DELETE e validar os conteúdos de cada rota retornados pelas funções do 'crudController'
+
+
+INSOMNIA
+
+Passo get:
+<img src="./assets2/get.png">
+
+Passo post:
+<img src="./assets2/post.png">
+
+Passo put: 
+<img src="./assets2/put.png">
+
+Passo delete:
+<img src="./assets2/del.png">
